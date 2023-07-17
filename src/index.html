@@ -1,14 +1,82 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Gallery</title>
   </head>
+
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <div id="particles-js"></div>
+
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">
+        <img
+          src="./images/search-icon.svg"
+          alt="Search icon"
+          width="20"
+          height="20"
+        />
+      </button>
+    </form>
+
+    <audio class="sound" src="./skrip (mp3cut.net).mp3"></audio>
+
+    <div class="gallery"></div>
+
+    <button type="button" class="to-beginning">
+      <img
+        src="./images/arrowheadup_111043.svg"
+        alt="to-beginning"
+        width="35"
+        height="35"
+      />
+    </button>
+
+    <button type="button" class="to-up">
+      <img
+        src="./images/up-arrow_icon-icons.com_73351.svg"
+        alt="to-up"
+        width="20"
+        height="20"
+      />
+    </button>
+
+    <button type="button" class="to-down">
+      <img
+        src="./images/angle-arrow-down_icon-icons.com_73683.svg"
+        alt="to-down"
+        width="20"
+        height="20"
+      />
+    </button>
+
+    <button type="button" class="to-end">
+      <img
+        src="./images/arrowheaddown_110942.svg"
+        alt="to-end"
+        width="35"
+        height="35"
+      />
+    </button>
+
+    <script src="./js/particles.js"></script>
+    <script src="./js/app.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
