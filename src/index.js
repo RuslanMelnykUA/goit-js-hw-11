@@ -36,12 +36,14 @@ async function onFormSubmit(evt) {
     Notify.info("Search line can't be empty, try again");
     return
   }
-  const data = await getImages(userInput, page);
-  console.log(data);
+  // const data = await getImages(userInput, page);
+  // console.log(data);
 
   try {
     searchRequest(data);
-  } catch(error) {
+    const data = await getImages(userInput, page);
+  }    
+    catch(error) {
     onFetchError(error);
   }
 }
@@ -80,14 +82,9 @@ function LoadMoreRequest(arr) {
     refs.loadBtn.removeAttribute('disabled');
   }
   if (page >= totalPages) {
+    // Notify.info("We're sorry, but you've reached the end of search results.");
     refs.loadBtn.setAttribute('disabled', true);
   }
-
-//  if(page > totalPages){
-//     Notify.info("We're sorry, but you've reached the end of search results.");
-//     refs.loadBtn.classList.add('is-hidden');
-//     return
-//   }
   
   createListMarkup(arr);
   smoothScroll();
