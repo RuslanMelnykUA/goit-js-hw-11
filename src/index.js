@@ -2,7 +2,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import SimpleLightbox from 'simplelightbox';
 import { getImages } from './js/fetchImages';
-// import { createListMarkup } from './js/createListMarkup';
 
 const refs = {
   form: document.querySelector('.search-form'),
@@ -36,16 +35,16 @@ async function onFormSubmit(evt) {
     Notify.info("Search line can't be empty, try again");
     return
   }
-  // const data = await getImages(userInput, page);
-  // console.log(data);
-
+  
   try {
-    searchRequest(data);
     const data = await getImages(userInput, page);
+    searchRequest(data);
+    
   }    
     catch(error) {
     onFetchError(error);
   }
+  
 }
 
 function searchRequest(arr) {
@@ -82,7 +81,6 @@ function LoadMoreRequest(arr) {
     refs.loadBtn.removeAttribute('disabled');
   }
   if (page >= totalPages) {
-    // Notify.info("We're sorry, but you've reached the end of search results.");
     refs.loadBtn.setAttribute('disabled', true);
   }
   
